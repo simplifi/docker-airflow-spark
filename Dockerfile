@@ -11,7 +11,7 @@ RUN chown -R spark $SPARK_HOME
 RUN chmod -R g+rw $SPARK_HOME
 
 # Install Airflow Dependencies
-RUN pip install celery==4.1.0 \
+RUN pip install celery==4.1.1 \
     greenlet==0.4.12 \
     eventlet==0.21.0 \
     filechunkio==1.8 \
@@ -29,7 +29,7 @@ COPY config/airflow.cfg ${AIRFLOW_HOME}/airflow.cfg
 
 
 #install airflow and expose needed ports
-RUN pip install apache-airflow[hdfs]==1.9.0
+RUN pip install apache-airflow[hdfs]==1.10.1
 EXPOSE 8080 5555 8793
 
 # Configure the entry point and set the default user to be `airflow`
